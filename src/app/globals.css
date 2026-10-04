@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --paper: #f4f2ee;
+    --card: #ffffff;
+    --ink: #0d0d0d;
+    --ink-2: #3a3a3a;
+    --mute: #77756f;
+    --faint: #a9a6a0;
+    --line: rgba(13, 13, 13, 0.1);
+    --soft: #e9e6e0;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --gutter: clamp(18px, 4vw, 64px);
+  }
+
+  * {
+    box-sizing: border-box;
+    border-color: var(--line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: clip;
+    position: relative;
+  }
+
+  ::selection {
+    background-color: var(--ink);
+    color: var(--paper);
+  }
+
+  a, button {
+    outline: none;
+    transition: all 0.25s var(--ease);
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+  }
+}
+
+/* Typography Helpers */
+.font-display {
+  font-family: var(--font-inter), sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.font-serif-accent {
+  font-family: var(--font-instrument), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--mute);
+}
+
+.font-mono-tag {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--ink);
+  color: #ffffff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: transform 0.25s var(--ease), background-color 0.25s var(--ease);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background-color: #222222;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--ink);
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  border: 1px solid var(--line);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), background-color 0.25s var(--ease);
+}
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  border-color: var(--ink);
+  background-color: rgba(13, 13, 13, 0.03);
+}
+
+/* Cards */
+.card-quiet {
+  background-color: var(--card);
+  border-radius: 28px;
+  box-shadow: inset 0 0 0 1px rgba(13, 13, 13, 0.07), 0 20px 40px -15px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.4s var(--ease), transform 0.4s var(--ease);
+}
+.card-quiet:hover {
+  box-shadow: inset 0 0 0 1px rgba(13, 13, 13, 0.12), 0 30px 60px -20px rgba(0, 0, 0, 0.07);
+}
+
+/* Reveal animations */
+.rv {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  transition-delay: calc(var(--i, 0) * 0.08s);
+}
+
+.rv.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rv-mask {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.rv-mask > * {
+  transform: translateY(100%);
+  transition: transform 0.8s var(--ease);
+  transition-delay: calc(var(--i, 0) * 0.08s);
+}
+
+.rv-mask.is-in > * {
+  transform: translateY(0);
+}
+
+/* Lanyard Strap Vertical Marquee */
+@keyframes strapScroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-strap-scroll {
+  animation: strapScroll 8s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(13, 13, 13, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(13, 13, 13, 0.4);
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .rv {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

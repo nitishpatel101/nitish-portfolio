@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nitish Kumar - Résumé</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm 16mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #111111;
+      background: #ffffff;
+      line-height: 1.45;
+      font-size: 10.5pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    a {
+      color: #0d0d0d;
+      text-decoration: none;
+      border-bottom: 1px dotted #888;
+    }
+    .header {
+      border-bottom: 2px solid #0d0d0d;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .name {
+      font-size: 24pt;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: #0d0d0d;
+      line-height: 1.1;
+    }
+    .role-title {
+      font-size: 12pt;
+      font-weight: 600;
+      color: #555555;
+      margin-top: 4px;
+      letter-spacing: -0.01em;
+    }
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+      font-size: 9pt;
+      color: #444444;
+    }
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .section {
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: 11pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #0d0d0d;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .summary-text {
+      font-size: 9.8pt;
+      color: #333333;
+      text-align: justify;
+      line-height: 1.5;
+    }
+    .item {
+      margin-bottom: 10px;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .item-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #0d0d0d;
+    }
+    .item-subtitle {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #555555;
+    }
+    .item-meta {
+      font-size: 9pt;
+      color: #777777;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    ul.bullets {
+      margin-top: 4px;
+      padding-left: 18px;
+      font-size: 9.5pt;
+      color: #333333;
+    }
+    ul.bullets li {
+      margin-bottom: 3px;
+      line-height: 1.4;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      row-gap: 6px;
+      column-gap: 12px;
+      font-size: 9.5pt;
+    }
+    .skills-category {
+      font-weight: 700;
+      color: #0d0d0d;
+    }
+    .skills-list {
+      color: #333333;
+    }
+    .badge {
+      display: inline-block;
+      background: #f0f0ee;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 8.5pt;
+      font-weight: 500;
+      margin-right: 4px;
+      margin-bottom: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 class="name">Nitish Kumar</h1>
+    <div class="role-title">Full Stack Web Developer &amp; AI Systems Engineer</div>
+    <div class="contact-bar">
+      <span class="contact-item">📍 Kushinagar, Uttar Pradesh, India</span>
+      <span class="contact-item">✉️ <a href="mailto:n70105453@gmail.com">n70105453@gmail.com</a></span>
+      <span class="contact-item">📞 <a href="tel:+919794852980">+91 9794852980</a></span>
+      <span class="contact-item">🌐 <a href="https://github.com/nitishkumar-dev" target="_blank">github.com/nitishkumar-dev</a></span>
+      <span class="contact-item">💼 <a href="https://linkedin.com/in/nitishkumar-dev" target="_blank">linkedin.com/in/nitishkumar-dev</a></span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <p class="summary-text">
+      Dynamic Full Stack Web Developer and BCA graduate from the University of Delhi (8.1 CGPA) with proven ability in building high-performance web applications, autonomous AI conversational agents, and real-time voice automation pipelines. Strong foundation in JavaScript/TypeScript, Python, React, Next.js, and Node.js. Dedicated to clean architecture, modular software design, and accessible, responsive user experiences.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Technical Stack</div>
+    <div class="skills-grid">
+      <div class="skills-category">Languages</div>
+      <div class="skills-list">JavaScript (ES6+), TypeScript, Python 3, HTML5, CSS3/Modern CSS, SQL</div>
+
+      <div class="skills-category">Frontend</div>
+      <div class="skills-list">React, Next.js 15 (App Router), Tailwind CSS, Responsive Design, State Management</div>
+
+      <div class="skills-category">Backend &amp; APIs</div>
+      <div class="skills-list">Node.js, Express.js, RESTful APIs, WebSockets, Python (FastAPI/Flask)</div>
+
+      <div class="skills-category">AI &amp; Automation</div>
+      <div class="skills-list">Google Gemini API, LangChain, Vapi AI, Twilio Telephony, Puppeteer, WhatsApp Business Automation</div>
+
+      <div class="skills-category">Databases &amp; Tools</div>
+      <div class="skills-list">MongoDB, PostgreSQL, Git, GitHub, Docker, Postman, Linux/CLI, Vercel</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Work &amp; Project Experience</div>
+    
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <span class="item-title">Full Stack &amp; AI Automation Developer</span>
+          <span class="item-subtitle"> | Independent Engineering &amp; Client Projects</span>
+        </div>
+        <span class="item-meta">2024 – Present</span>
+      </div>
+      <ul class="bullets">
+        <li>Architected and deployed autonomous multi-channel AI assistants integrating Google Gemini LLM, Node.js, and WhatsApp Web automation with real-time text and Google TTS voice note synthesis.</li>
+        <li>Implemented full-duplex conversational voice telephony agents bridging Twilio telephony trunks with Vapi AI engines over WebSockets, achieving sub-500ms latency speech-to-speech interaction.</li>
+        <li>Developed high-conversion modern web applications using Next.js 15, TypeScript, and Tailwind CSS with sub-second page loads and 95+ Google Lighthouse scores across all metrics.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Selected Projects</div>
+
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <span class="item-title">WhatsApp AI Autonomous Agent</span>
+          <span class="item-subtitle"> — Intelligent Conversational Bot with Voice Synthesis</span>
+        </div>
+        <span class="item-meta">Node.js, Gemini API, Puppeteer, TTS</span>
+      </div>
+      <ul class="bullets">
+        <li>Built an autonomous WhatsApp assistant that monitors incoming chats and voice queries, maintaining conversation history and dynamic persona prompt routing.</li>
+        <li>Integrated Google Cloud Text-to-Speech to generate lifelike voice notes directly sent back to WhatsApp users with automatic clean-up and retry logic.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <span class="item-title">Real-Time Voice AI Telephony Agent</span>
+          <span class="item-subtitle"> — Automated Inbound &amp; Outbound Calling Platform</span>
+        </div>
+        <span class="item-meta">Vapi, Twilio, Node.js, WebSockets</span>
+      </div>
+      <ul class="bullets">
+        <li>Engineered low-latency telephony infrastructure connecting phone numbers via Twilio with Vapi conversational AI pipelines for automated lead handling.</li>
+        <li>Constructed real-time WebSocket audio streaming, call status tracking, event webhooks, and structured call transcription summaries.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <span class="item-title">Luxury E-Commerce Web Platform</span>
+          <span class="item-subtitle"> — Full Stack Responsive Shopping Application</span>
+        </div>
+        <span class="item-meta">Next.js, React, Tailwind CSS, TypeScript</span>
+      </div>
+      <ul class="bullets">
+        <li>Constructed a full-featured apparel storefront featuring interactive product galleries, client-side filtering, responsive mobile cart, and optimized media loading.</li>
+        <li>Achieved 99 Performance and 100 Accessibility Lighthouse ratings with zero layout shift and server-side component rendering.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <span class="item-title">Bachelor of Computer Applications (BCA)</span>
+          <span class="item-subtitle"> — University of Delhi</span>
+        </div>
+        <span class="item-meta">2022 – 2025</span>
+      </div>
+      <ul class="bullets">
+        <li>Cumulative Grade Point Average (CGPA): <strong>8.1 / 10</strong> (Distinction)</li>
+        <li>Relevant Coursework: Data Structures &amp; Algorithms, Object-Oriented Programming (Java/Python), Database Management Systems, Computer Networks, Web Technologies.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Achievements &amp; Certifications</div>
+    <ul class="bullets">
+      <li><strong>Academic Distinction:</strong> Graduated with 8.1 CGPA in Bachelor of Computer Applications from University of Delhi.</li>
+      <li><strong>500+ Hours:</strong> Hands-on production engineering in Full Stack Web, REST APIs, and autonomous AI pipelines.</li>
+      <li><strong>15+ Repositories &amp; Applications:</strong> Built and deployed production-ready applications with high reliability.</li>
+      <li><strong>Certifications:</strong> Full Stack Web Development (JavaScript/React/Node), Python Programming &amp; Algorithmic Problem Solving.</li>
+    </ul>
+  </div>
+
+</body>
+</html>
