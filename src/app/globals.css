@@ -125,17 +125,22 @@
   box-shadow: inset 0 0 0 1px rgba(13, 13, 13, 0.12), 0 30px 60px -20px rgba(0, 0, 0, 0.07);
 }
 
-/* Reveal animations */
+/* Reveal animations - always visible with gentle entrance */
 .rv {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
-  transition-delay: calc(var(--i, 0) * 0.08s);
-}
-
-.rv.is-in {
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+
+@keyframes subtleReveal {
+  from {
+    opacity: 0.4;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .rv-mask {

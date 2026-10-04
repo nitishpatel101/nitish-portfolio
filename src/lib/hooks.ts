@@ -49,25 +49,33 @@ export function useScrollProgress(): number {
 }
 
 export function useInView(
-  options: IntersectionObserverInit = { threshold: 0.15 }
+  options: IntersectionObserverInit = { threshold: 0.05, rootMargin: "0px 0px 50px 0px" }
 ): [RefObject<HTMLDivElement | null>, boolean] {
   const ref = useRef<HTMLDivElement | null>(null);
   const [isInView, setIsInView] = useState(false);
+  const threshold = options.threshold ?? 0.05;
+  const rootMargin = options.rootMargin ?? "0px 0px 50px 0px";
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsInView(true);
-        observer.unobserve(el);
-      }
-    }, options);
+    // If already in view, skip
+    if (isInView) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold, rootMargin }
+    );
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [options]);
+  }, [threshold, rootMargin, isInView]);
 
   return [ref, isInView];
 }

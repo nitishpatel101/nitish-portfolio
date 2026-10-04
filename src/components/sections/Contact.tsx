@@ -96,6 +96,15 @@ export function Contact() {
                 <span>{PROFILE.phone}</span>
               </a>
               <a
+                href="https://wa.me/919794852980?text=Hi%20Nitish%2C%20I%20saw%20your%20portfolio..."
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-[#25D366] flex items-center gap-1.5 font-bold text-[#0d0d0d] transition-colors"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
+                <span>WhatsApp ↗</span>
+              </a>
+              <a
                 href={PROFILE.github}
                 target="_blank"
                 rel="noreferrer"

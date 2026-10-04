@@ -108,7 +108,7 @@ export function Hero() {
 
       {/* Hero Video Container */}
       <div className="relative z-10 my-auto flex items-center justify-center w-full max-w-[768px]">
-        <div className="relative h-[clamp(62svh,96svh,1040px)] aspect-[768/960] flex items-center justify-center">
+        <div className="relative h-[clamp(44svh,58svh,700px)] sm:h-[clamp(62svh,96svh,1040px)] aspect-[768/960] flex items-center justify-center">
           <video
             ref={videoRef}
             playsInline

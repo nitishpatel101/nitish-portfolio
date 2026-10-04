@@ -14,9 +14,10 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -74,7 +75,13 @@ export function Navigation() {
         aria-hidden="true"
       />
 
-      <header className="fixed top-0 left-0 right-0 z-40 px-[var(--gutter)] py-4 transition-all duration-300">
+      <header
+        className={`fixed top-0 left-0 right-0 z-40 px-[var(--gutter)] transition-all duration-300 ${
+          scrolled
+            ? "py-2.5 bg-[#f4f2ee]/90 backdrop-blur-md border-b border-[rgba(13,13,13,0.06)] shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
+            : "py-4 bg-transparent"
+        }`}
+      >
         <div className="max-w-[1320px] mx-auto flex items-center justify-between">
           
           {/* Left: Initials badge & Name */}
